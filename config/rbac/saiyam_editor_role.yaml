@@ -1,0 +1,24 @@
+# permissions for end users to edit saiyams.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: saiyam-editor-role
+rules:
+- apiGroups:
+  - hello.example.com
+  resources:
+  - saiyams
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hello.example.com
+  resources:
+  - saiyams/status
+  verbs:
+  - get
