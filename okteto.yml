@@ -1,0 +1,22 @@
+name: demo-operator-controller-manager
+namespace: demo-operator-system
+container: manager
+image: okteto/golang:1
+command: bash
+securityContext:
+  capabilities:
+    add:
+    - SYS_PTRACE
+volumes:
+- /go/pkg/
+- /root/.cache/go-build/
+sync:
+- .:/usr/src/app
+remote: 22000
+forward:
+- 2345:2345
+- 8443:8443
+resources:
+  limits:
+    cpu: "1"
+    memory: 2Gi

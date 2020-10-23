@@ -28,14 +28,14 @@ type SaiyamSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Saiyam. Edit Saiyam_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// The docker image to deploy
+	Image string `json:"image,omitempty"`
 }
 
 // SaiyamStatus defines the observed state of Saiyam
 type SaiyamStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	Name      string `json:"name,omitempty"`
+	Namespace string `json:"namespace,omitempty"`
 }
 
 // +kubebuilder:object:root=true

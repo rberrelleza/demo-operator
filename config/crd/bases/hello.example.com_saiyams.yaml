@@ -36,13 +36,17 @@ spec:
         spec:
           description: SaiyamSpec defines the desired state of Saiyam
           properties:
-            foo:
-              description: Foo is an example field of Saiyam. Edit Saiyam_types.go
-                to remove/update
+            image:
+              description: The docker image to deploy
               type: string
           type: object
         status:
           description: SaiyamStatus defines the observed state of Saiyam
+          properties:
+            name:
+              type: string
+            namespace:
+              type: string
           type: object
       type: object
   version: v1beta1
